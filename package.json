@@ -1,7 +1,7 @@
 {
   "name": "at-utils",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "packageManager": "pnpm@7.12.0",
   "description": "",
   "author": "Jesse Wang <ajesses891@gmail.com>",
