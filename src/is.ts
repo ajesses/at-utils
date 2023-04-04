@@ -88,6 +88,13 @@ export function isFunction(val: unknown): val is Function {
 }
 
 /**
+ * @description: 对象是否为空
+ * @param {unknown} obj
+ * @return {boolean} true / false
+ */
+export const isObjectEmpty = (obj: Object) => Reflect.ownKeys(obj).length === 0 && obj.constructor === Object
+
+/**
  * @description: 是否为空
  * @param {unknown} val
  * @return {boolean} true / false
