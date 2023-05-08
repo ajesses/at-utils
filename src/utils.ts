@@ -34,3 +34,52 @@ export const resolveAbsolutePath = (...paths: string[]) => {
   }
   return resolvePath
 }
+
+/**
+ * 将 10 进制转换成 n 进制
+ * @param num 转换值
+ * @param n 进制
+ * @returns 
+ */
+export const toDecimal = (num: number, n = 10) => num.toString(n)
+
+/**
+ * 将 n 进制转换成 10 进制
+ * @param num 
+ * @param n 
+ * @returns 
+ */
+export const toDecimalism = (num: string, n = 10) => parseInt(num, n)
+
+/**
+ * 在一个数字 num 不足 len 位数的时候前面补零操作
+ * @param num 
+ * @param len 
+ * @param zero 
+ * @returns 
+ */
+export const replenishZero = (num: number, len: number, zero = '0') => num.toString().padStart(len, zero)
+
+/**
+ * 随机颜色
+ * @returns 
+ */
+export const getRandomColor = () => `#${Math.floor(Math.random() * 0xffffff).toString(16)}`
+
+/**
+ * 生成一个 ip 地址
+ * @returns 
+ */
+export const randomIp = () =>
+    Array(4)
+        .fill(0)
+        .map((_, i) => Math.floor(Math.random() * 255) + (i === 0 ? 1 : 0))
+        .join('.');
+
+/**
+ * 等待
+ * @param t 
+ * @returns 
+ * @use sleep(2000).then(() => {console.log('time')});
+ */
+export const sleep = async (t: number) => new Promise((resolve) => setTimeout(resolve, t));
