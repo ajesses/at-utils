@@ -5,7 +5,7 @@ export const dayDiff = (date1: Date, date2: Date) => Math.ceil(Math.abs(date1.ge
 export const isWeekday = (date: Date) => date.getDay() % 6 !== 0
 
 // type: day, hour, minute, second
-export function getDuration(time: number, type: DateType, ms = 1) {
+export function getTimeDuration(time: number, type: DateType, ms = 1) {
   if (type === 'day')
     return Math.floor(time / ms / 60 / 60 / 24)
   if (type === 'hour') {
