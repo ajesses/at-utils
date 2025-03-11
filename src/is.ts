@@ -126,7 +126,7 @@ export const isFalsy = (value: unknown) => (value === 0 ? true : !!value)
  * @param {unknown} val
  * @return {boolean} true / false
  */
-export const isJSON = (data: string) => {
+export function isJSON(data: string) {
   if (typeof data !== 'string')
     return false
   try {
@@ -146,7 +146,7 @@ export const isJSON = (data: string) => {
  * @param {unknown} val
  * @return {boolean} true / false
  */
-export const isPropertyExistInObject = (item: any, name = 'visible') => {
+export function isPropertyExistInObject(item: any, name = 'visible') {
   if (({}).hasOwnProperty.call(item, name))
     return item[name]
   else
@@ -186,7 +186,7 @@ export const isClient = !isServer
  * @param {unknown} val
  * @return {boolean} true / false
  */
-export const isUrl = (path: string): boolean => {
+export function isUrl(path: string): boolean {
   const reg
     = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/
   return reg.test(path)

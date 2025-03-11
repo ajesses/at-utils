@@ -25,7 +25,27 @@ export function getTimeDuration(time: number, type: DateType, ms = 1) {
   }
 }
 
-export function getSeconds(time: number, type: DateType, ms = 1) {
-  if (type === 'day')
-    return time * 24 * 60 * 60 * ms
+export function getSeconds(time: number, type: DateType, formatType: DateType = 'second', ms = 1) {
+  let res = 0
+  const map = new Map<[DateType, DateType], number>()
+  map.set(['day', 'hour'], 24)
+  map.set(['day', 'minute'], 24 * 60)
+  map.set(['day', 'second'], 24 * 60 * 60)
+  switch (type) {
+    case 'day':
+      res = time * 24 * 60 * 60
+      break
+    case 'hour':
+      res = time * 60 * 60
+      break
+    case 'minute':
+      res = time * 60
+      break
+    case 'second':
+      res = time
+      break
+    default:
+      break
+  }
+  return res * ms
 }
